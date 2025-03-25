@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Лабораторна робота № 3</h1>
+    <h2>✨Виберіть будь яке завдання✨</h2>
+    <nav>
+        <button onclick="showTask('multiplication')">Таблиця множення</button>
+        <button onclick="showTask('countries')">Список країн</button>
+        <button onclick="showTask('userForm')">Дані користувача</button>
+        <button onclick="showTask('calculator')">Калькулятор</button>
+        <button onclick="showTask('ticTacToe')">Хрестики-нулики</button>
+    </nav>
+
+    <div id="content">
+        <section id="multiplication" class="task">
+            <h2>Таблиця множення</h2>
+            <input type="number" id="multiplicationInput" placeholder="Введіть число">
+            <button onclick="generateMultiplicationTable()">Генерувати</button>
+            <div id="multiplicationOutput"></div>
+        </section>
+
+        <section id="countries" class="task">
+            <h2>Список країн</h2>
+            <div id="countryOutput"></div>
+        </section>
+
+        <section id="userForm" class="task">
+            <h2>Дані користувача</h2>
+            <form onsubmit="event.preventDefault(); createUser();">
+                <input type="text" id="lastName" placeholder="Прізвище" required>
+                <input type="text" id="firstName" placeholder="Ім'я" required>
+                <input type="number" id="age" placeholder="Вік" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <button type="submit">ГОТОВО</button>
+            </form>
+            <div id="userOutput"></div>
+        </section>
+
+        <section id="calculator" class="task">
+            <h2>Калькулятор</h2>
+            <input type="number" id="num1" placeholder="Число 1">
+            <input type="number" id="num2" placeholder="Число 2">
+            <select id="operation">
+                <option value="add">Додавання</option>
+                <option value="subtract">Віднімання</option>
+                <option value="multiply">Множення</option>
+                <option value="divide">Ділення</option>
+                <option value="mod">Ділення по модулю</option>
+                <option value="sqrt">Корінь</option>
+                <option value="power">Степінь</option>
+            </select>
+            <button onclick="calculate()">Обчислити</button>
+            <div id="result"></div>
+        </section>
+
+        <section id="ticTacToe" class="task">
+            <h2>Гра: Хрестики-нулики</h2>
+            <div id="gameBoard"></div>
+            <p id="gameStatus"></p>
+            <button onclick="restartGame()">Почати заново</button>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
